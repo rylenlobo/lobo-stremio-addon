@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lobo
+    runtime: node
+    plan: free
+    region: frankfurt   # closest to PK; change if you prefer
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
